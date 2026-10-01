@@ -1,0 +1,96 @@
+setcpm(82)
+
+// 🌊 AGUA
+// Fluida, brillante y en movimiento
+$: note("<[c4,e4,g4,b4] [d4,f4,a4,c5]>")
+  .slow(2)
+  .gain(.35)
+  .attack(.2)
+  .release(.8)
+  .delay(.5)
+  .room(.8)
+  .lpf(1800)
+
+// 🌊 OLAS
+// Movimiento continuo, como olas que suben y bajan
+$: note("<c4 e4 g4 e4 d4 f4 a4 f4>")
+  .slow(2)
+  .s("sine")
+  .gain(.22)
+  .attack(.4)
+  .release(.8)
+  .delay(.4)
+  .room(.9)
+  .lpf(1400)
+
+// 🌊 GOTAS DE AGUA
+$: note("c5 ~ e5 ~ g5 ~ b5")
+  .fast(2)
+  .s("triangle")
+  .gain(.18)
+  .decay(.15)
+  .release(.3)
+  .delay(.6)
+  .room(.9)
+
+
+// 🔥 FUEGO
+// Pulsos rápidos y agresivos
+_$: note("<c2 c2 g1 c2> <d2 d2 a1 d2>")
+  .fast(2)
+  .s("sawtooth")
+  .gain(.28)
+  .attack(.01)
+  .release(.12)
+  .distort(.65)
+  .lpf(900)
+
+
+// 🔥 CHISPAS
+_$: note("c4 [e4 g4] ~ [d5 c5] ~")
+  .fast(4)
+  .s("square")
+  .gain(.13)
+  .decay(.08)
+  .release(.1)
+  .distort(.4)
+
+
+// 🌱 TIERRA
+// El elemento más pesado: representa suelo, montaña y raíces
+_$: s("bd ~ bd bd ~ bd ~ bd")
+  .gain(.75)
+  .lpf(180)
+  .shape(.4)
+
+
+// 🌱 GOLPES DE TIERRA
+_$: s("~ ~ sd ~ ~ sd ~ ~")
+  .gain(.35)
+  .lpf(500)
+  .room(.2)
+
+
+// 💨 AIRE
+// Melodía muy aguda y espaciosa
+_$: note("<[g5 b5 d6] [a5 c6 e6]>")
+  .slow(4)
+  .s("sine")
+  .gain(.18)
+  .attack(.8)
+  .release(2)
+  .delay(.7)
+  .room(1)
+  .hpf(1200)
+
+
+// 💨 CORRIENTE DE AIRE
+_$: note("~ g6 ~ b6 ~ d7 ~ a6")
+  .slow(2)
+  .s("triangle")
+  .gain(.12)
+  .attack(.5)
+  .release(1.5)
+  .delay(.8)
+  .room(1)
+  .hpf(2500)
