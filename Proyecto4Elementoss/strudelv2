@@ -1,0 +1,60 @@
+const { visualid } = createParams('visualid')
+
+setcpm(60)
+
+// 🌊 AGUA
+// Fluida, brillante y en movimiento
+let agua = note("<[c4,e4,g4,b4] [d4,f4,a4,c5]>")
+  .slow(2)
+  .gain(.35)
+  .attack(.2)
+  .release(.8)
+  .delay(.5)
+  .room(.8)
+  .lpf(1800)
+  .visualid("agua")
+
+$agua: stack(agua, agua.osc())
+
+
+// 🔥 FUEGO
+// Pulsos rápidos y agresivos
+let fuego = note("<c2 c2 g1 c2> <d2 d2 a1 d2>")
+  .fast(2)
+  .s("sawtooth")
+  .gain(.28)
+  .attack(.01)
+  .release(.12)
+  .distort(.65)
+  .lpf(900)
+  .visualid("fuego")
+
+$fuego: stack(fuego, fuego.osc())
+
+
+// 🌱 TIERRA
+// El elemento más pesado: representa suelo, montaña y raíces
+let tierra = s("bd ~ bd bd ~ bd ~ bd")
+  .gain(.75)
+  .lpf(180)
+  .shape(.4)
+  .visualid("tierra")
+
+$tierra: stack(tierra, tierra.osc())
+
+
+// 💨 AIRE
+// Melodía muy aguda y espaciosa
+let aire = note("<[g5 b5 d6] [a5 c6 e6]>")
+  .slow(4)
+  .s("sine")
+  .gain(.18)
+  .attack(.8)
+  .release(2)
+  .delay(.7)
+  .room(1)
+  .hpf(1200)
+  .visualid("aire")
+
+$aire: stack(aire, aire.osc())
+
