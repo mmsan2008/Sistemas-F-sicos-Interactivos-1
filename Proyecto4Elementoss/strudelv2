@@ -34,7 +34,7 @@ $fuego: stack(fuego, fuego.osc())
 
 // 🌱 TIERRA
 // El elemento más pesado: representa suelo, montaña y raíces
-let tierra = s("bd ~ bd bd ~ bd ~ bd")
+let tierra = s("<bd  bd bd  bd  bd>")
   .gain(.75)
   .lpf(180)
   .shape(.4)
